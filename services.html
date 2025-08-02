@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Pricing - Sparta Trading King</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: radial-gradient(circle at center, #0a0a0a 0%, #1a1310 30%, #2d1f0f 60%, #0a0a0a 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Liquid Gold Background Animation */
+        .liquid-gold-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                conic-gradient(from 0deg at 50% 50%, 
+                    rgba(255, 215, 0, 0.03) 0deg,
+                    rgba(218, 165, 32, 0.06) 60deg,
+                    rgba(255, 193, 7, 0.04) 120deg,
+                    rgba(255, 215, 0, 0.02) 180deg,
+                    rgba(255, 223, 0, 0.05) 240deg,
+                    rgba(218, 165, 32, 0.03) 300deg,
+                    rgba(255, 215, 0, 0.03) 360deg);
+            z-index: -3;
+            animation: liquidFlow 30s linear infinite;
+        }
+
+        @keyframes liquidFlow {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        /* Gold Mesh Overlay */
+        .gold-mesh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(45deg, transparent 40%, rgba(255, 215, 0, 0.015) 50%, transparent 60%),
+                linear-gradient(-45deg, transparent 40%, rgba(218, 165, 32, 0.01) 50%, transparent 60%);
+            background-size: 60px 60px;
+            z-index: -1;
+            animation: meshShimmer 8s ease-in-out infinite;
+        }
+
+        @keyframes meshShimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(26, 19, 16, 0.95));
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffd700, #daa520);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #e6d16a;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: #ffd700;
+            background: rgba(255, 215, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ffd700, #daa520);
+            color: #000 !important;
+            padding: 0.8rem 2rem !important; /* Increased horizontal padding */
+            border-radius: 25px !important;
+            font-weight: 600 !important;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            white-space: nowrap; /* Prevent text wrapping */
+            min-width: 180px; /* Minimum width for the button */
+            text-align: center; /* Center the text */
+        }
+
+        /* Header */
+        .page-header {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(26, 19, 16, 0.9));
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            animation: headerShine 6s infinite;
+        }
+
+        @keyframes headerShine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffd700, #daa520, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.4rem;
+            color: #e6d16a;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Service Packages */
+        .services-section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #ffd700, #daa520, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .section-description {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #e6d16a;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            line-height: 1.7;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
+            margin-bottom: 6rem;
+        }
+
+        .package-card {
+            background: linear-gradient(145deg, 
+                rgba(255, 215, 0, 0.1) 0%, 
+                rgba(0, 0, 0, 0.8) 20%, 
+                rgba(26, 19, 16, 0.9) 80%, 
+                rgba(218, 165, 32, 0.1) 100%);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 30px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+
+        .package-card.featured {
+            border-color: rgba(255, 215, 0, 0.6);
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.2);
+        }
+
+        .package-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: linear-gradient(135deg, #ffd700, #daa520);
+            color: #000;
+            padding: 0.5rem 3rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            transform: rotate(45deg);
+            letter-spacing: 1px;
+        }
+
+        .package-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: rgba(255, 215, 0, 0.6);
+            box-shadow: 0 30px 60px rgba(255, 215, 0, 0.3);
+        }
+
+        .package-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.6));
+        }
+
+        .package-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #ffd700;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .package-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            font-weight: 900;
+        }
+
+        .package-period {
+            color: #daa520;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .package-description {
+            color: #e6d16a;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+            text-align: left;
+        }
+
+        .package-features li {
+            color: #e6d16a;
+            margin-bottom: 0.8rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .package-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .package-button {
+            background: linear-gradient(135deg, #ffd700, #daa520);
+            color: #000;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .package-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5);
+        }
+
+        .package-button.secondary {
+            background: transparent;
+            color: #ffd700;
+            border: 2px solid #ffd700;
+        }
+
+        .package-button.secondary:hover {
+            background: #ffd700;
+            color: #000;
+        }
+
+        /* Custom Solutions */
+        .custom-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(0, 0, 0, 0.8));
+            border-radius: 30px;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .custom-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .custom-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #ffd700;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .custom-description {
+            font-size: 1.3rem;
+            color: #e6d16a;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        .custom-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .custom-feature {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .custom-feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        .custom-feature-title {
+            font-size: 1.3rem;
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .custom-feature-text {
+            color: #e6d16a;
+            font-size: 1rem;
+        }
+
+        /* Payment Information */
+        .payment-section {
+            padding: 6rem 0;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .payment-card {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(26, 19, 16, 0.9));
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 25px;
+            padding: 3rem 2.5rem;
+            position: relative;
+        }
+
+        .payment-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #ffd700;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .payment-list {
+            list-style: none;
+        }
+
+        .payment-list li {
+            color: #e6d16a;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .payment-list li::before {
+            content: '💳';
+            position: absolute;
+            left: 0;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(26, 19, 16, 0.8));
+            border-radius: 30px;
+            margin: 4rem 0;
+        }
+
+        .faq-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 1.5rem 2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #ffd700;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 215, 0, 0.2);
+        }
+
+        .faq-answer {
+            padding: 1.5rem 2rem;
+            color: #e6d16a;
+            line-height: 1.6;
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(26, 19, 16, 0.9));
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            color: #ffd700;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: #e6d16a;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .page-title { font-size: 3rem; }
+            .section-title { font-size: 2.5rem; }
+            .packages-grid { grid-template-columns: 1fr; }
+            .package-card.featured { transform: none; }
+            .payment-grid, .custom-features { grid-template-columns: 1fr; }
+            .footer-content { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="liquid-gold-bg"></div>
+    <div class="gold-mesh"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">SPARTA TRADING KING</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="performance.html">Performance</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="consultation.html" class="cta-button">Free Consultation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Premium Trading Services</h1>
+            <p class="page-subtitle">
+                Transform your wealth through the alchemy of golden trading mastery. 
+                Choose from our exclusive service packages designed for discerning investors.
+            </p>
+        </div>
+    </section>
+
+    <main>
+        <!-- Service Packages -->
+        <section class="services-section">
+            <div class="container">
+                <h2 class="section-title">Service Packages</h2>
+                <p class="section-description">
+                    Each service is crafted with the precision of a master jeweler, 
+                    designed to transform your portfolio into liquid gold.
+                </p>
+
+                <div class="packages-grid">
+                    <!-- Gold Standard Signals -->
+                    <div class="package-card">
+                        <div class="package-icon">🏺</div>
+                        <h3 class="package-name">Gold Standard Signals</h3>
+                        <div class="package-price">€2,500</div>
+                        <div class="package-period">per month</div>
+                        <p class="package-description">
+                            Premium trading signals distilled from 20+ years of market mastery. 
+                            Each signal is liquid gold flowing directly to your portfolio.
+                        </p>
+                        <ul class="package-features">
+                            <li>5-8 premium signals per week</li>
+                            <li>Detailed entry, exit, and stop-loss levels</li>
+                            <li>Risk management guidelines</li>
+                            <li>Market analysis and reasoning</li>
+                            <li>Telegram group access</li>
+                            <li>Email and SMS notifications</li>
+                            <li>Historical performance tracking</li>
+                        </ul>
+                        <a href="contact.html" class="package-button">Subscribe Now</a>
+                    </div>
+
+                    <!-- Diamond Mentorship -->
+                    <div class="package-card featured">
+                        <div class="package-icon">💎</div>
+                        <h3 class="package-name">Diamond Mentorship</h3>
+                        <div class="package-price">€5,000</div>
+                        <div class="package-period">per month</div>
+                        <p class="package-description">
+                            One-on-one mentorship to transform your trading into an art form. 
+                            Learn the alchemy of turning market movements into gold.
+                        </p>
+                        <ul class="package-features">
+                            <li>4 hours of 1-on-1 sessions monthly</li>
+                            <li>Personalized trading strategy development</li>
+                            <li>Real-time trade analysis and feedback</li>
+                            <li>Psychology and mindset coaching</li>
+                            <li>Custom risk management framework</li>
+                            <li>All Gold Standard Signals included</li>
+                            <li>Direct WhatsApp access</li>
+                            <li>Quarterly performance review</li>
+                        </ul>
+                        <a href="contact.html" class="package-button">Apply Now</a>
+                    </div>
+
+                    <!-- Royal Portfolio Management -->
+                    <div class="package-card">
+                        <div class="package-icon">👑</div>
+                        <h3 class="package-name">Royal Portfolio Management</h3>
+                        <div class="package-price">2.5%</div>
+                        <div class="package-period">management fee + 25% performance fee</div>
+                        <p class="package-description">
+                            Exclusive portfolio management for high-net-worth individuals. 
+                            Your wealth crafted like royal jewelry with precision and care.
+                        </p>
+                        <ul class="package-features">
+                            <li>€50,000 minimum investment</li>
+                            <li>Full discretionary management</li>
+                            <li>Quarterly strategy meetings</li>
+                            <li>Detailed monthly reporting</li>
+                            <li>Tax-optimized structures</li>
+                            <li>24/7 portfolio monitoring</li>
+                            <li>Dedicated relationship manager</li>
+                            <li>Institutional-grade execution</li>
+                        </ul>
+                        <a href="contact.html" class="package-button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Solutions -->
+        <section class="custom-section">
+            <div class="container">
+                <div class="custom-content">
+                    <h2 class="custom-title">Bespoke Trading Solutions</h2>
+                    <p class="custom-description">
+                        For institutional clients and ultra-high-net-worth individuals requiring 
+                        customized trading solutions crafted to their exact specifications.
+                    </p>
+
+                    <div class="custom-features">
+                        <div class="custom-feature">
+                            <div class="custom-feature-icon">🏛️</div>
+                            <h4 class="custom-feature-title">Institutional Services</h4>
+                            <p class="custom-feature-text">Custom solutions for banks, hedge funds, and family offices</p>
+                        </div>
+                        <div class="custom-feature">
+                            <div class="custom-feature-icon">⚖️</div>
+                            <h4 class="custom-feature-title">Regulatory Compliance</h4>
+                            <p class="custom-feature-text">Fully compliant structures meeting all regulatory requirements</p>
+                        </div>
+                        <div class="custom-feature">
+                            <div class="custom-feature-icon">🔒</div>
+                            <h4 class="custom-feature-title">White Label Solutions</h4>
+                            <p class="custom-feature-text">Private label trading services under your brand</p>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="package-button">Request Custom Quote</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Information -->
+        <section class="payment-section">
+            <div class="container">
+                <h2 class="section-title">Payment & Terms</h2>
+
+                <div class="payment-grid">
+                    <div class="payment-card">
+                        <h3 class="payment-title">Accepted Payment Methods</h3>
+                        <ul class="payment-list">
+                            <li>Bank Wire Transfer (EUR/USD)</li>
+                            <li>Credit/Debit Cards (Visa, MasterCard)</li>
+                            <li>PayPal Business</li>
+                            <li>Cryptocurrency (BTC, ETH, USDT)</li>
+                            <li>SEPA Direct Debit (EU clients)</li>
+                        </ul>
+                    </div>
+
+                    <div class="payment-card">
+                        <h3 class="payment-title">Terms & Conditions</h3>
+                        <ul class="payment-list">
+                            <li>Monthly billing in advance</li>
+                            <li>7-day free trial for new clients</li>
+                            <li>30-day money-back guarantee</li>
+                            <li>Cancel anytime with 30 days notice</li>
+                            <li>All prices exclude applicable taxes</li>
+                        </ul>
+                    </div>
+
+                    <div class="payment-card">
+                        <h3 class="payment-title">Getting Started</h3>
+                        <ul class="payment-list">
+                            <li>Schedule free consultation call</li>
+                            <li>Complete KYC/AML verification</li>
+                            <li>Sign service agreement</li>
+                            <li>Make initial payment</li>
+                            <li>Begin your golden journey</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What is the minimum investment for portfolio management?
+                        </div>
+                        <div class="faq-answer">
+                            The minimum investment for our Royal Portfolio Management service is €50,000. This ensures we can implement sophisticated strategies and provide the level of personalized attention our clients deserve.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            How are trading signals delivered?
+                        </div>
+                        <div class="faq-answer">
+                            Signals are delivered through multiple channels: dedicated Telegram group, email alerts, and SMS notifications. Each signal includes entry price, stop loss, take profit levels, and detailed market analysis.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What is your track record and performance history?
+                        </div>
+                        <div class="faq-answer">
+                            With 20+ years of trading experience, I've achieved a 847% total return with a 94% win rate and maximum drawdown of only 3.2%. Detailed performance reports are available to verified clients.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Do you offer refunds if I'm not satisfied?
+                        </div>
+                        <div class="faq-answer">
+                            Yes, we offer a 30-day money-back guarantee for all services. If you're not completely satisfied within the first 30 days, we'll provide a full refund.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What markets and instruments do you trade?
+                        </div>
+                        <div class="faq-answer">
+                            I specialize in forex major pairs, gold, oil, and major stock indices. My expertise covers both short-term scalping and longer-term swing trading strategies across these markets.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Are your services regulated and compliant?
+                        </div>
+                        <div class="faq-answer">
+                            Yes, all services are provided in full compliance with European financial regulations. We maintain proper licenses and follow strict KYC/AML procedures for client protection.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="#gold-signals">Gold Standard Signals</a>
+                    <a href="#mentorship">Diamond Mentorship</a>
+                    <a href="#portfolio">Portfolio Management</a>
+                    <a href="consultation.html">Free Consultation</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <a href="about.html">About</a>
+                    <a href="performance.html">Performance</a>
+                    <a href="testimonials.html">Testimonials</a>
+                    <a href="blog.html">Market Insights</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="disclaimers.html">Risk Disclaimers</a>
+                    <a href="compliance.html">Compliance</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <a href="mailto:info@spartatradingking.com">info@spartatradingking.com</a>
+                    <a href="tel:+4917712345678">+49 177 1234 5678</a>
+                    <a href="consultation.html">Schedule Consultation</a>
+                    <a href="client-portal.html">Client Portal</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255, 215, 0, 0.2);">
+                <p style="color: #e6d16a; margin-bottom: 1rem;">
+                    Forged in liquid gold • Refined through luxury • Perfected in opulence
+                </p>
+                <div style="width: 300px; height: 3px; background: linear-gradient(90deg, transparent, #ffd700, #daa520, #ffd700, transparent); margin: 2rem auto;"></div>
+                <p style="color: #daa520; font-size: 0.9rem;">
+                    © 2025 Sparta Trading King. All rights reserved. Trading involves substantial risk.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            
+            // Close all FAQ answers
+            document.querySelectorAll('.faq-answer').forEach(answer => {
+                answer.classList.remove('active');
+            });
+            
+            // Open clicked FAQ if it wasn't already active
+            if (!isActive) {
+                answer.classList.add('active');
+            }
+        }
+
+        // Smooth scrolling for navigation links with offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const offset = navHeight + 20; // Add 20px extra spacing
+                    const targetPosition = target.offsetTop - offset;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Package card animations
+        const packageCards = document.querySelectorAll('.package-card');
+        packageCards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.2}s`;
+            card.style.animation = 'packageFloat 8s ease-in-out infinite';
+        });
+
+        // CSS keyframe for package animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes packageFloat {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-8px); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(26, 19, 16, 0.98))';
+                nav.style.backdropFilter = 'blur(30px)';
+            } else {
+                nav.style.background = 'linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(26, 19, 16, 0.95))';
+                nav.style.backdropFilter = 'blur(25px)';
+            }
+        });
+    </script>
+</body>
+</html>

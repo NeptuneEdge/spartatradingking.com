@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Sparta Trading King</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: radial-gradient(circle at center, #0a0a0a 0%, #1a1310 30%, #2d1f0f 60%, #0a0a0a 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* Liquid Gold Background Animation */
+        .liquid-gold-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                conic-gradient(from 0deg at 50% 50%, 
+                    rgba(255, 215, 0, 0.03) 0deg,
+                    rgba(218, 165, 32, 0.06) 60deg,
+                    rgba(255, 193, 7, 0.04) 120deg,
+                    rgba(255, 215, 0, 0.02) 180deg,
+                    rgba(255, 223, 0, 0.05) 240deg,
+                    rgba(218, 165, 32, 0.03) 300deg,
+                    rgba(255, 215, 0, 0.03) 360deg);
+            z-index: -3;
+            animation: liquidFlow 30s linear infinite;
+        }
+
+        @keyframes liquidFlow {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        /* Gold Mesh Overlay */
+        .gold-mesh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(45deg, transparent 40%, rgba(255, 215, 0, 0.015) 50%, transparent 60%),
+                linear-gradient(-45deg, transparent 40%, rgba(218, 165, 32, 0.01) 50%, transparent 60%);
+            background-size: 60px 60px;
+            z-index: -1;
+            animation: meshShimmer 8s ease-in-out infinite;
+        }
+
+        @keyframes meshShimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(26, 19, 16, 0.95));
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffd700, #daa520);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #e6d16a;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: #ffd700;
+            background: rgba(255, 215, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ffd700, #daa520);
+            color: #000 !important;
+            padding: 0.8rem 2rem !important; /* Increased horizontal padding */
+            border-radius: 25px !important;
+            font-weight: 600 !important;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            white-space: nowrap; /* Prevent text wrapping */
+            min-width: 180px; /* Minimum width for the button */
+            text-align: center; /* Center the text */
+        }
+
+        /* Header */
+        .page-header {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 100, 200, 0.1), rgba(26, 19, 16, 0.9));
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(0, 150, 255, 0.3);
+            border-radius: 0 0 30px 30px;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 150, 255, 0.2), transparent);
+            animation: legalShine 5s infinite;
+        }
+
+        @keyframes legalShine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: #4a9eff;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 30px rgba(74, 158, 255, 0.5);
+        }
+
+        .page-subtitle {
+            font-size: 1.4rem;
+            color: #b3d9ff;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+
+        .legal-icon {
+            font-size: 5rem;
+            color: #4a9eff;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 20px rgba(74, 158, 255, 0.7));
+        }
+
+        .effective-date {
+            background: rgba(74, 158, 255, 0.1);
+            border: 1px solid rgba(74, 158, 255, 0.3);
+            border-radius: 10px;
+            padding: 1rem 2rem;
+            margin: 2rem auto;
+            max-width: 400px;
+            text-align: center;
+            color: #4a9eff;
+            font-weight: 600;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 0;
+            margin: 2rem 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #ffd700;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            padding-bottom: 1rem;
+        }
+
+        .legal-text {
+            color: #e6d16a;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .legal-text strong {
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        .subsection {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            border-left: 4px solid rgba(255, 215, 0, 0.6);
+        }
+
+        .subsection-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #ffd700;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .terms-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .terms-list li {
+            color: #e6d16a;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .terms-list li::before {
+            content: '§';
+            position: absolute;
+            left: 0;
+            color: #4a9eff;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .important-box {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(218, 165, 32, 0.05));
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .important-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #ffd700;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .important-text {
+            color: #e6d16a;
+            font-size: 1rem;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        .payment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .payment-table th,
+        .payment-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .payment-table th {
+            background: rgba(255, 215, 0, 0.1);
+            color: #ffd700;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .payment-table td {
+            color: #e6d16a;
+        }
+
+        /* Quick Navigation */
+        .quick-nav {
+            position: sticky;
+            top: 120px; /* Increased from 100px to avoid overlap */
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(74, 158, 255, 0.3);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+            z-index: 100; /* Added z-index */
+        }
+
+        .quick-nav h3 {
+            color: #4a9eff;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .quick-nav ul {
+            list-style: none;
+        }
+
+        .quick-nav a {
+            color: #e6d16a;
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 0;
+            border-bottom: 1px dotted rgba(74, 158, 255, 0.2);
+            transition: color 0.3s ease;
+        }
+
+        .quick-nav a:hover {
+            color: #4a9eff;
+        }
+
+        /* Acceptance Section */
+        .acceptance-section {
+            background: linear-gradient(135deg, rgba(0, 255, 0, 0.1), rgba(0, 0, 0, 0.8));
+            border-radius: 25px;
+            padding: 4rem;
+            text-align: center;
+            margin: 4rem 0;
+            border: 2px solid rgba(0, 255, 0, 0.3);
+        }
+
+        .acceptance-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #00ff88;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .acceptance-text {
+            color: #e6d16a;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .acceptance-date {
+            color: #00ff88;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(26, 19, 16, 0.9));
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            color: #ffd700;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: #e6d16a;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .page-title { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            .legal-icon { font-size: 3rem; }
+            .quick-nav { position: static; }
+            .footer-content { text-align: center; }
+            
+            .subsection, .acceptance-section, .important-box {
+                padding: 1.5rem;
+            }
+            
+            .payment-table {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="liquid-gold-bg"></div>
+    <div class="gold-mesh"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">SPARTA TRADING KING</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="performance.html">Performance</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="consultation.html" class="cta-button">Free Consultation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="legal-icon">📜</div>
+            <h1 class="page-title">Terms of Service</h1>
+            <p class="page-subtitle">
+                Comprehensive service agreements, client obligations, and terms governing 
+                all trading services and business relationships with Sparta Trading King.
+            </p>
+            <div class="effective-date">
+                Effective Date: January 1, 2025
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <!-- Quick Navigation -->
+            <div class="quick-nav">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    <li><a href="#acceptance">Acceptance of Terms</a></li>
+                    <li><a href="#services">Service Descriptions</a></li>
+                    <li><a href="#payments">Payment Terms</a></li>
+                    <li><a href="#obligations">Client Obligations</a></li>
+                    <li><a href="#intellectual">Intellectual Property</a></li>
+                    <li><a href="#termination">Termination</a></li>
+                    <li><a href="#disputes">Dispute Resolution</a></li>
+                    <li><a href="#modifications">Modifications</a></li>
+                </ul>
+            </div>
+
+            <!-- Acceptance of Terms -->
+            <section id="acceptance" class="content-section">
+                <h2 class="section-title">1. Acceptance of Terms</h2>
+                
+                <p class="legal-text">
+                    <strong>Agreement to Terms:</strong> By accessing our website, engaging our services, or entering into 
+                    any service agreement with Sparta Trading King ("Company," "we," "us," "our"), you ("Client," "you," 
+                    "your") agree to be bound by these Terms of Service ("Terms") and all applicable laws and regulations.
+                </p>
+
+                <div class="important-box">
+                    <h3 class="important-title">Binding Agreement</h3>
+                    <p class="important-text">
+                        These Terms constitute a legally binding agreement between you and Sparta Trading King. 
+                        If you do not agree to these Terms, you must not use our services.
+                    </p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Eligibility Requirements</h3>
+                    <ul class="terms-list">
+                        <li>You must be at least 18 years of age or the age of majority in your jurisdiction</li>
+                        <li>You must have legal capacity to enter into binding contracts</li>
+                        <li>You must not be prohibited from receiving services under applicable laws</li>
+                        <li>You must meet all suitability and regulatory requirements</li>
+                        <li>You must provide accurate and complete information during registration</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Service Descriptions -->
+            <section id="services" class="content-section">
+                <h2 class="section-title">2. Service Descriptions & Scope</h2>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Trading Signal Services</h3>
+                    <p class="legal-text">
+                        <strong>Gold Standard Signals:</strong> Premium trading signals provided via electronic communication 
+                        channels including but not limited to Telegram, email, and SMS. Signals include entry points, 
+                        exit targets, and risk management guidelines.
+                    </p>
+                    <ul class="terms-list">
+                        <li>Signals are recommendations only and not investment advice</li>
+                        <li>No guarantee of profitability or specific outcomes</li>
+                        <li>Execution timing and market conditions may affect results</li>
+                        <li>Client maintains full control over trading decisions</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Mentorship Services</h3>
+                    <p class="legal-text">
+                        <strong>Diamond Mentorship:</strong> One-on-one educational and coaching services designed to improve 
+                        trading knowledge and skills. Includes personal sessions, strategy development, and performance analysis.
+                    </p>
+                    <ul class="terms-list">
+                        <li>Educational content for skill development purposes</li>
+                        <li>No guarantee of trading success or profitability</li>
+                        <li>Sessions conducted via video conference or phone</li>
+                        <li>Materials provided are for personal use only</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Portfolio Management</h3>
+                    <p class="legal-text">
+                        <strong>Royal Portfolio Management:</strong> Discretionary investment management services for qualified 
+                        clients meeting minimum investment thresholds and suitability requirements.
+                    </p>
+                    <ul class="terms-list">
+                        <li>Subject to separate Investment Management Agreement</li>
+                        <li>Minimum investment requirements apply</li>
+                        <li>Regulatory compliance and reporting obligations</li>
+                        <li>Risk disclosure and suitability assessment required</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Payment Terms -->
+            <section id="payments" class="content-section">
+                <h2 class="section-title">3. Payment Terms & Billing</h2>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Service Fees & Billing Cycle</h3>
+                    
+                    <table class="payment-table">
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Billing Frequency</th>
+                                <th>Payment Due</th>
+                                <th>Late Fee</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Gold Standard Signals</td>
+                                <td>Monthly</td>
+                                <td>1st of each month</td>
+                                <td>€50 after 7 days</td>
+                            </tr>
+                            <tr>
+                                <td>Diamond Mentorship</td>
+                                <td>Monthly</td>
+                                <td>1st of each month</td>
+                                <td>€100 after 7 days</td>
+                            </tr>
+                            <tr>
+                                <td>Portfolio Management</td>
+                                <td>Quarterly</td>
+                                <td>End of quarter</td>
+                                <td>1% of AUM monthly</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Payment Methods & Processing</h3>
+                    <ul class="terms-list">
+                        <li>Bank wire transfer (EUR/USD) - preferred method</li>
+                        <li>Credit/Debit cards (Visa, MasterCard) via secure processor</li>
+                        <li>PayPal Business for eligible clients</li>
+                        <li>Cryptocurrency (BTC, ETH, USDT) for qualified accounts</li>
+                        <li>SEPA Direct Debit for European Union clients</li>
+                    </ul>
+                </div>
+
+                <div class="important-box">
+                    <h3 class="important-title">Payment Obligations</h3>
+                    <p class="important-text">
+                        All fees are due in advance and non-refundable except as specifically provided. 
+                        Failure to pay fees when due may result in immediate service suspension and termination.
+                    </p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Refund Policy</h3>
+                    <p class="legal-text">
+                        <strong>30-Day Money-Back Guarantee:</strong> New clients may request a full refund within 30 days 
+                        of initial service commencement. Refund requests must be submitted in writing with reasons.
+                    </p>
+                    <ul class="terms-list">
+                        <li>Refunds processed within 5-10 business days</li>
+                        <li>Partial refunds not available for ongoing services</li>
+                        <li>Portfolio management refunds subject to separate terms</li>
+                        <li>Processing fees may be deducted from refund amount</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Client Obligations -->
+            <section id="obligations" class="content-section">
+                <h2 class="section-title">4. Client Obligations & Responsibilities</h2>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Information Accuracy</h3>
+                    <ul class="terms-list">
+                        <li>Provide accurate, complete, and current personal and financial information</li>
+                        <li>Promptly update any changes to contact information or financial status</li>
+                        <li>Maintain confidentiality of account access credentials</li>
+                        <li>Notify immediately of any unauthorized access or security breaches</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Trading Compliance</h3>
+                    <ul class="terms-list">
+                        <li>Comply with all applicable laws and regulations in your jurisdiction</li>
+                        <li>Maintain adequate capital and risk management practices</li>
+                        <li>Use services only for lawful investment and trading purposes</li>
+                        <li>Not share or redistribute proprietary trading signals or materials</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Prohibited Activities</h3>
+                    <p class="legal-text">
+                        Clients are strictly prohibited from engaging in the following activities:
+                    </p>
+                    <ul class="terms-list">
+                        <li>Sharing login credentials or account access with third parties</li>
+                        <li>Reverse engineering or attempting to replicate our trading strategies</li>
+                        <li>Using services for money laundering or illegal financial activities</li>
+                        <li>Harassing or abusing our staff or other clients</li>
+                        <li>Attempting to circumvent security measures or access controls</li>
+                        <li>Making false or misleading statements about our services</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Intellectual Property -->
+            <section id="intellectual" class="content-section">
+                <h2 class="section-title">5. Intellectual Property Rights</h2>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Proprietary Content</h3>
+                    <p class="legal-text">
+                        <strong>Ownership:</strong> All content, materials, trading strategies, analysis, software, 
+                        and intellectual property provided through our services remain the exclusive property of 
+                        Sparta Trading King and are protected by copyright, trademark, and trade secret laws.
+                    </p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Limited License</h3>
+                    <p class="legal-text">
+                        We grant clients a limited, non-exclusive, non-transferable license to use our materials 
+                        solely for personal trading and investment purposes during the active service period.
+                    </p>
+                    <ul class="terms-list">
+                        <li>No right to copy, distribute, or share proprietary materials</li>
+                        <li>License terminates immediately upon service termination</li>
+                        <li>No reverse engineering or analysis of trading algorithms</li>
+                        <li>Breach of license terms may result in legal action</li>
+                    </ul>
+                </div>
+
+                <div class="important-box">
+                    <h3 class="important-title">Trade Secrets Protection</h3>
+                    <p class="important-text">
+                        Our trading methodologies, algorithms, and strategies constitute valuable trade secrets. 
+                        Unauthorized disclosure or use may result in immediate termination and legal proceedings.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Termination -->
+            <section id="termination" class="content-section">
+                <h2 class="section-title">6. Termination of Services</h2>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Client Termination Rights</h3>
+                    <ul class="terms-list">
+                        <li>Cancel services with 30 days written notice</li>
+                        <li>No refund for partial service periods after initial guarantee period</li>
+                        <li>Access terminates at end of current billing cycle</li>
+                        <li>Portfolio management requires 90 days notice</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Company Termination Rights</h3>
+                    <p class="legal-text">
+                        We reserve the right to terminate services immediately for cause, including but not limited to:
+                    </p>
+                    <ul class="terms-list">
+                        <li>Breach of these Terms or service agreements</li>
+                        <li>Non-payment of fees or charges</li>
+                        <li>Fraudulent or illegal activities</li>
+                        <li>Abusive behavior toward staff or other clients</li>
+                        <li>Regulatory or compliance violations</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Post-Termination Obligations</h3>
+                    <ul class="terms-list">
+                        <li>All outstanding fees become immediately due and payable</li>
+                        <li>Confidentiality obligations survive termination indefinitely</li>
+                        <li>Client must cease all use of proprietary materials</li>
+                        <li>Return or destruction of confidential information upon request</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Dispute Resolution -->
+            <section id="disputes" class="content-section">
+                <h2 class="section-title">7. Dispute Resolution & Legal Matters</h2>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Governing Law & Jurisdiction</h3>
+                    <p class="legal-text">
+                        <strong>German Law:</strong> These Terms and all disputes arising from our services shall be 
+                        governed by and construed in accordance with the laws of Germany, without regard to conflict 
+                        of law principles.
+                    </p>
+                    <p class="legal-text">
+                        <strong>Exclusive Jurisdiction:</strong> All disputes shall be subject to the exclusive jurisdiction 
+                        of the courts of Frankfurt am Main, Germany. Clients irrevocably consent to the jurisdiction 
+                        of such courts.
+                    </p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Dispute Resolution Process</h3>
+                    <ul class="terms-list">
+                        <li><strong>Step 1:</strong> Direct negotiation - 30 days to resolve informally</li>
+                        <li><strong>Step 2:</strong> Mediation - Binding mediation through qualified mediator</li>
+                        <li><strong>Step 3:</strong> Arbitration - Final binding arbitration if mediation fails</li>
+                        <li><strong>Step 4:</strong> Court proceedings - Only for enforcement of arbitration awards</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Limitation of Actions</h3>
+                    <p class="legal-text">
+                        Any claim or cause of action arising under these Terms must be filed within one (1) year 
+                        after the claim or cause of action arose, or it shall be forever barred.
+                    </p>
+                </div>
+
+                <div class="important-box">
+                    <h3 class="important-title">Class Action Waiver</h3>
+                    <p class="important-text">
+                        Clients agree to resolve disputes individually and waive any right to participate in 
+                        class action lawsuits or class-wide arbitration proceedings.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Modifications -->
+            <section id="modifications" class="content-section">
+                <h2 class="section-title">8. Modifications & Updates</h2>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Term Modifications</h3>
+                    <p class="legal-text">
+                        <strong>Right to Modify:</strong> We reserve the right to modify these Terms at any time. 
+                        Material changes will be communicated to clients at least 30 days prior to the effective date.
+                    </p>
+                    <ul class="terms-list">
+                        <li>Notice provided via email and website posting</li>
+                        <li>Continued use of services constitutes acceptance</li>
+                        <li>Right to terminate if changes are unacceptable</li>
+                        <li>No retroactive application of adverse changes</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Service Modifications</h3>
+                    <p class="legal-text">
+                        We may modify, suspend, or discontinue any aspect of our services with reasonable notice. 
+                        We are not liable for any modification, suspension, or discontinuation of services.
+                    </p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Price Changes</h3>
+                    <ul class="terms-list">
+                        <li>Service prices may be modified with 60 days notice</li>
+                        <li>Existing clients grandfathered for one billing cycle</li>
+                        <li>Right to cancel before price increase takes effect</li>
+                        <li>No price protection for new service additions</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Additional Legal Provisions -->
+            <section id="additional" class="content-section">
+                <h2 class="section-title">9. Additional Legal Provisions</h2>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Severability</h3>
+                    <p class="legal-text">
+                        If any provision of these Terms is held to be invalid or unenforceable, the remaining 
+                        provisions shall remain in full force and effect. Invalid provisions shall be replaced 
+                        with valid provisions that most closely reflect the original intent.
+                    </p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Entire Agreement</h3>
+                    <p class="legal-text">
+                        These Terms, together with any separate service agreements, constitute the entire agreement 
+                        between the parties and supersede all prior agreements, understandings, and representations.
+                    </p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Assignment</h3>
+                    <ul class="terms-list">
+                        <li>Clients may not assign or transfer rights under these Terms</li>
+                        <li>We may assign our rights and obligations to affiliated entities</li>
+                        <li>Assignment requires prior written consent except as specified</li>
+                        <li>Terms bind successors and permitted assigns</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Force Majeure</h3>
+                    <p class="legal-text">
+                        Neither party shall be liable for any failure or delay in performance due to circumstances 
+                        beyond their reasonable control, including acts of God, war, terrorism, pandemic, government 
+                        actions, or technical failures.
+                    </p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Survival</h3>
+                    <p class="legal-text">
+                        The following provisions shall survive termination of these Terms: payment obligations, 
+                        intellectual property rights, confidentiality, limitation of liability, and dispute resolution.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Contact Information -->
+            <section id="contact-terms" class="content-section">
+                <h2 class="section-title">10. Contact Information & Legal Notices</h2>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Legal Entity Information</h3>
+                    <p class="legal-text">
+                        <strong>Company Name:</strong> Sparta Trading King<br>
+                        <strong>Business Address:</strong> [Business Address], Frankfurt am Main, Germany<br>
+                        <strong>Registration:</strong> [Business Registration Number]<br>
+                        <strong>VAT ID:</strong> [VAT Identification Number]
+                    </p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Legal Contact Information</h3>
+                    <ul class="terms-list">
+                        <li><strong>General Legal:</strong> legal@spartatradingking.com</li>
+                        <li><strong>Contract Matters:</strong> contracts@spartatradingking.com</li>
+                        <li><strong>Compliance:</strong> compliance@spartatradingking.com</li>
+                        <li><strong>Disputes:</strong> disputes@spartatradingking.com</li>
+                        <li><strong>Phone:</strong> +49 177 1234 5678 (Business Hours: 9-17 CET)</li>
+                    </ul>
+                </div>
+
+                <div class="important-box">
+                    <h3 class="important-title">Legal Notice Delivery</h3>
+                    <p class="important-text">
+                        All legal notices must be delivered in writing via registered mail or email to the 
+                        addresses specified above. Notices are deemed effective upon receipt or 3 business 
+                        days after sending, whichever occurs first.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Acceptance Confirmation -->
+            <section class="acceptance-section">
+                <h2 class="acceptance-title">Terms Acceptance Confirmation</h2>
+                <p class="acceptance-text">
+                    By using our services, you acknowledge that you have read, understood, and agree to be bound 
+                    by these Terms of Service in their entirety. These Terms constitute a legally binding agreement 
+                    between you and Sparta Trading King.
+                </p>
+                <div class="acceptance-date">
+                    Last Updated: January 1, 2025 | Version 2.0
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Legal Documents</h3>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="disclaimers.html">Risk Disclaimers</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="compliance.html">Compliance</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="services.html">Gold Standard Signals</a>
+                    <a href="services.html">Diamond Mentorship</a>
+                    <a href="services.html">Portfolio Management</a>
+                    <a href="consultation.html">Free Consultation</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <a href="about.html">About</a>
+                    <a href="performance.html">Performance</a>
+                    <a href="testimonials.html">Testimonials</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal Contact</h3>
+                    <a href="mailto:legal@spartatradingking.com">legal@spartatradingking.com</a>
+                    <a href="mailto:contracts@spartatradingking.com">contracts@spartatradingking.com</a>
+                    <a href="mailto:compliance@spartatradingking.com">compliance@spartatradingking.com</a>
+                    <a href="tel:+4917712345678">+49 177 1234 5678</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255, 215, 0, 0.2);">
+                <p style="color: #4a9eff; margin-bottom: 1rem; font-weight: 600;">
+                    📜 Legally binding terms • Professional service agreements • Client protection
+                </p>
+                <div style="width: 300px; height: 3px; background: linear-gradient(90deg, transparent, #4a9eff, #ffd700, #4a9eff, transparent); margin: 2rem auto;"></div>
+                <p style="color: #daa520; font-size: 0.9rem;">
+                    © 2025 Sparta Trading King. All rights reserved. Terms of Service v2.0 - January 2025
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links with proper offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    const navHeight = 80; // Fixed nav height
+                    const extraSpace = 30; // Extra breathing room
+                    const targetPosition = target.offsetTop - navHeight - extraSpace;
+                    
+                    window.scrollTo({
+                        top: Math.max(0, targetPosition),
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(26, 19, 16, 0.98))';
+                nav.style.backdropFilter = 'blur(30px)';
+            } else {
+                nav.style.background = 'linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(26, 19, 16, 0.95))';
+                nav.style.backdropFilter = 'blur(25px)';
+            }
+        });
+
+        // Important sections highlighting
+        const importantBoxes = document.querySelectorAll('.important-box');
+        importantBoxes.forEach(box => {
+            box.addEventListener('mouseenter', function() {
+                this.style.borderColor = 'rgba(255, 215, 0, 0.8)';
+                this.style.boxShadow = '0 0 30px rgba(255, 215, 0, 0.3)';
+                this.style.transform = 'scale(1.02)';
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            box.addEventListener('mouseleave', function() {
+                this.style.borderColor = 'rgba(255, 215, 0, 0.4)';
+                this.style.boxShadow = 'none';
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Quick navigation active section highlighting
+        const sections = document.querySelectorAll('.content-section');
+        const navLinks = document.querySelectorAll('.quick-nav a');
+
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '-100px 0px -50% 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.style.color = '#e6d16a';
+                        link.style.fontWeight = 'normal';
+                    });
+                    
+                    const activeLink = document.querySelector(`a[href="#${id}"]`);
+                    if (activeLink) {
+                        activeLink.style.color = '#4a9eff';
+                        activeLink.style.fontWeight = '600';
+                    }
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add reading progress indicator
+        const progressBar = document.createElement('div');
+        progressBar.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #4a9eff, #ffd700);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        `;
+        document.body.appendChild(progressBar);
+
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            progressBar.style.width = scrolled + '%';
+        });
+
+        // Table row hover effects
+        const tableRows = document.querySelectorAll('.payment-table tbody tr');
+        tableRows.forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255, 215, 0, 0.1)';
+                this.style.transform = 'scale(1.01)';
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.background = '';
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Acceptance section animation
+        const acceptanceSection = document.querySelector('.acceptance-section');
+        const acceptanceObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'acceptancePulse 2s ease-in-out 3';
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (acceptanceSection) {
+            acceptanceObserver.observe(acceptanceSection);
+        }
+
+        // Add acceptance pulse animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes acceptancePulse {
+                0%, 100% { 
+                    border-color: rgba(0, 255, 0, 0.3);
+                    box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+                }
+                50% { 
+                    border-color: rgba(0, 255, 0, 0.8);
+                    box-shadow: 0 0 40px rgba(0, 255, 136, 0.5);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

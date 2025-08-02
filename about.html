@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Sparta Trading King</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: radial-gradient(circle at center, #0a0a0a 0%, #1a1310 30%, #2d1f0f 60%, #0a0a0a 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Liquid Gold Background Animation */
+        .liquid-gold-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                conic-gradient(from 0deg at 50% 50%, 
+                    rgba(255, 215, 0, 0.03) 0deg,
+                    rgba(218, 165, 32, 0.06) 60deg,
+                    rgba(255, 193, 7, 0.04) 120deg,
+                    rgba(255, 215, 0, 0.02) 180deg,
+                    rgba(255, 223, 0, 0.05) 240deg,
+                    rgba(218, 165, 32, 0.03) 300deg,
+                    rgba(255, 215, 0, 0.03) 360deg);
+            z-index: -3;
+            animation: liquidFlow 30s linear infinite;
+        }
+
+        @keyframes liquidFlow {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        /* Gold Mesh Overlay */
+        .gold-mesh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(45deg, transparent 40%, rgba(255, 215, 0, 0.015) 50%, transparent 60%),
+                linear-gradient(-45deg, transparent 40%, rgba(218, 165, 32, 0.01) 50%, transparent 60%);
+            background-size: 60px 60px;
+            z-index: -1;
+            animation: meshShimmer 8s ease-in-out infinite;
+        }
+
+        @keyframes meshShimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(26, 19, 16, 0.95));
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffd700, #daa520);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #e6d16a;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: #ffd700;
+            background: rgba(255, 215, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ffd700, #daa520);
+            color: #000 !important;
+            padding: 0.8rem 2rem !important; /* Increased horizontal padding */
+            border-radius: 25px !important;
+            font-weight: 600 !important;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            white-space: nowrap; /* Prevent text wrapping */
+            min-width: 180px; /* Minimum width for the button */
+            text-align: center; /* Center the text */
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 8rem 0 6rem;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffd700, #daa520, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: #daa520;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: #e6d16a;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffd700;
+            display: block;
+        }
+
+        .hero-stat-label {
+            color: #daa520;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-image {
+            position: relative;
+            text-align: center;
+        }
+
+        .profile-placeholder {
+            width: 400px;
+            height: 500px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(0, 0, 0, 0.8));
+            border: 3px solid rgba(255, 215, 0, 0.4);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            animation: profileGlow 4s linear infinite;
+        }
+
+        @keyframes profileGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Journey Timeline */
+        .journey-section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #ffd700, #daa520, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #ffd700, #daa520, #ffd700);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: auto;
+            margin-left: 0;
+            text-align: right;
+            padding-right: 3rem;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+            margin-right: 0;
+            text-align: left;
+            padding-left: 3rem;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 0, 0, 0.8));
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .timeline-year {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #ffd700;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .timeline-description {
+            color: #e6d16a;
+            line-height: 1.6;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #ffd700;
+            border-radius: 50%;
+            border: 4px solid #0a0a0a;
+            z-index: 2;
+        }
+
+        /* Philosophy Section */
+        .philosophy-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(0, 0, 0, 0.8));
+            border-radius: 30px;
+            margin: 4rem 0;
+        }
+
+        .philosophy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .philosophy-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #ffd700;
+            font-style: italic;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+
+        .philosophy-text {
+            font-size: 1.2rem;
+            color: #e6d16a;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        .philosophy-principles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .principle-card {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .principle-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        .principle-title {
+            font-size: 1.2rem;
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .principle-text {
+            color: #e6d16a;
+            font-size: 0.95rem;
+        }
+
+        /* Skills & Expertise */
+        .skills-section {
+            padding: 6rem 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(26, 19, 16, 0.9));
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 25px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 215, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+        }
+
+        .skill-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #ffd700;
+        }
+
+        .skill-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #ffd700;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .skill-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .skill-list li {
+            color: #e6d16a;
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: #daa520;
+        }
+
+        /* Languages Section */
+        .languages-section {
+            padding: 6rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(0, 0, 0, 0.6));
+            border-radius: 30px;
+            margin: 4rem 0;
+        }
+
+        .languages-grid {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .language-card {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 0, 0, 0.8));
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            min-width: 200px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .language-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(218, 165, 32, 0.05));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .language-card:hover::before {
+            opacity: 1;
+        }
+
+        .language-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 215, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .language-flag {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+            display: block;
+        }
+
+        .language-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .language-level {
+            color: #daa520;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(26, 19, 16, 0.9));
+            border-radius: 30px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #ffd700;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .cta-text {
+            font-size: 1.3rem;
+            color: #e6d16a;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ffd700, #daa520);
+            color: #000;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ffd700;
+            padding: 1.2rem 2.5rem;
+            border: 2px solid #ffd700;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #ffd700;
+            color: #000;
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(26, 19, 16, 0.9));
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            color: #ffd700;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: #e6d16a;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-title { font-size: 3rem; }
+            .section-title { font-size: 2.5rem; }
+            .philosophy-quote { font-size: 1.8rem; }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+                margin-right: 0 !important;
+                text-align: left !important;
+                padding: 2rem !important;
+            }
+            
+            .timeline-marker {
+                left: 20px;
+                transform: none;
+            }
+            
+            .profile-placeholder {
+                width: 300px;
+                height: 400px;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .languages-grid {
+                gap: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-content {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="liquid-gold-bg"></div>
+    <div class="gold-mesh"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">SPARTA TRADING KING</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="performance.html">Performance</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="consultation.html" class="cta-button">Free Consultation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">The Alchemist Behind the Gold</h1>
+                        <p class="hero-subtitle">Master Trader • Market Alchemist • Wealth Creator</p>
+                        <p class="hero-description">
+                            For over two decades, I have transformed the chaos of financial markets into liquid gold. 
+                            Born from fire, forged through discipline, and perfected through countless market cycles. 
+                            My journey from ambitious trader to market alchemist is written in golden profits 
+                            and measured in transformed lives.
+                        </p>
+                        <div class="hero-stats">
+                            <div class="hero-stat">
+                                <span class="hero-stat-number">20+</span>
+                                <span class="hero-stat-label">Years Experience</span>
+                            </div>
+                            <div class="hero-stat">
+                                <span class="hero-stat-number">847%</span>
+                                <span class="hero-stat-label">Total Returns</span>
+                            </div>
+                            <div class="hero-stat">
+                                <span class="hero-stat-number">94%</span>
+                                <span class="hero-stat-label">Win Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="profile-placeholder">
+                            👑
+                            <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: #daa520; font-size: 1rem; font-family: 'Montserrat', sans-serif;">
+                                Professional Photo Here
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey Timeline -->
+        <section class="journey-section">
+            <div class="container">
+                <h2 class="section-title">The Golden Journey</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2003</div>
+                            <h3 class="timeline-title">The Spark Ignites</h3>
+                            <p class="timeline-description">
+                                Discovered the forex markets while working in traditional finance. 
+                                The raw power and potential captivated me instantly. Began studying 
+                                market patterns with obsessive dedication.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2005-2008</div>
+                            <h3 class="timeline-title">Forged in Fire</h3>
+                            <p class="timeline-description">
+                                Survived and thrived through multiple market crashes. 
+                                The 2008 financial crisis became my greatest teacher, 
+                                showing me how to turn chaos into opportunity.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2010-2015</div>
+                            <h3 class="timeline-title">The Refinement</h3>
+                            <p class="timeline-description">
+                                Developed my signature trading methodology combining 
+                                technical precision with fundamental wisdom. 
+                                Achieved consistent profitability across all market conditions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2016-2020</div>
+                            <h3 class="timeline-title">Empire Building</h3>
+                            <p class="timeline-description">
+                                Expanded beyond personal trading to wealth management. 
+                                Built a track record of transforming client portfolios 
+                                into golden fortunes through disciplined execution.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2021-Present</div>
+                            <h3 class="timeline-title">The Alchemist Emerges</h3>
+                            <p class="timeline-description">
+                                Perfected the art of liquid gold trading. Now sharing 
+                                this mastery with select clients who understand that 
+                                true wealth is crafted, not found.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trading Philosophy -->
+        <section class="philosophy-section">
+            <div class="container">
+                <div class="philosophy-content">
+                    <h2 class="section-title">Trading Philosophy</h2>
+                    <blockquote class="philosophy-quote">
+                        "Markets are not random - they are rivers of liquid gold waiting for those who understand their flow."
+                    </blockquote>
+                    <p class="philosophy-text">
+                        My approach to trading transcends mere profit-seeking. It is an art form, 
+                        a disciplined craft that transforms market volatility into liquid wealth. 
+                        Every position is placed with surgical precision, every exit calculated with mathematical beauty.
+                    </p>
+
+                    <div class="philosophy-principles">
+                        <div class="principle-card">
+                            <div class="principle-icon">⚖️</div>
+                            <h4 class="principle-title">Balance & Harmony</h4>
+                            <p class="principle-text">Perfect equilibrium between risk and reward, emotion and logic.</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-icon">🎯</div>
+                            <h4 class="principle-title">Precision Execution</h4>
+                            <p class="principle-text">Every trade executed with surgical accuracy and unwavering discipline.</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-icon">🌊</div>
+                            <h4 class="principle-title">Flow with Markets</h4>
+                            <p class="principle-text">Understanding market rhythm and moving in harmony with natural cycles.</p>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-icon">🛡️</div>
+                            <h4 class="principle-title">Capital Preservation</h4>
+                            <p class="principle-text">Protecting wealth is the foundation upon which golden fortunes are built.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Expertise -->
+        <section class="skills-section">
+            <div class="container">
+                <h2 class="section-title">Expertise & Mastery</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="skill-icon">📈</div>
+                        <h3 class="skill-title">Technical Analysis</h3>
+                        <ul class="skill-list">
+                            <li>Advanced Chart Pattern Recognition</li>
+                            <li>Multi-Timeframe Analysis</li>
+                            <li>Fibonacci & Elliott Wave Theory</li>
+                            <li>Support & Resistance Mastery</li>
+                            <li>Volume Profile Analysis</li>
+                            <li>Custom Indicator Development</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-icon">🌍</div>
+                        <h3 class="skill-title">Fundamental Analysis</h3>
+                        <ul class="skill-list">
+                            <li>Global Economic Analysis</li>
+                            <li>Central Bank Policy Impact</li>
+                            <li>Geopolitical Risk Assessment</li>
+                            <li>Currency Correlation Studies</li>
+                            <li>Commodity Market Dynamics</li>
+                            <li>News Flow Integration</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-icon">⚗️</div>
+                        <h3 class="skill-title">Risk Management</h3>
+                        <ul class="skill-list">
+                            <li>Position Sizing Algorithms</li>
+                            <li>Portfolio Correlation Analysis</li>
+                            <li>Drawdown Management</li>
+                            <li>Stress Testing Strategies</li>
+                            <li>Hedging Techniques</li>
+                            <li>Capital Allocation Models</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-icon">🎭</div>
+                        <h3 class="skill-title">Trading Psychology</h3>
+                        <ul class="skill-list">
+                            <li>Emotional Discipline Training</li>
+                            <li>Mindfulness in Trading</li>
+                            <li>Cognitive Bias Recognition</li>
+                            <li>Performance Psychology</li>
+                            <li>Stress Management Techniques</li>
+                            <li>Mental Resilience Building</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-icon">🔧</div>
+                        <h3 class="skill-title">Technology & Tools</h3>
+                        <ul class="skill-list">
+                            <li>MetaTrader 4/5 Mastery</li>
+                            <li>TradingView Advanced Charts</li>
+                            <li>Bloomberg Terminal</li>
+                            <li>Python Trading Algorithms</li>
+                            <li>Risk Management Software</li>
+                            <li>Portfolio Analytics Tools</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-icon">💼</div>
+                        <h3 class="skill-title">Market Specialization</h3>
+                        <ul class="skill-list">
+                            <li>Forex Major & Minor Pairs</li>
+                            <li>Gold & Precious Metals</li>
+                            <li>Crude Oil & Energy Markets</li>
+                            <li>Global Stock Indices</li>
+                            <li>Cryptocurrency Trading</li>
+                            <li>Bond & Fixed Income</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages Section -->
+        <section class="languages-section">
+            <div class="container">
+                <h2 class="section-title">Trilingual Mastery</h2>
+                
+                <div class="languages-grid">
+                    <div class="language-card">
+                        <div class="language-flag">🇩🇪</div>
+                        <h3 class="language-name">Deutsch</h3>
+                        <p class="language-level">Native Fluency</p>
+                    </div>
+                    <div class="language-card">
+                        <div class="language-flag">🇬🇧</div>
+                        <h3 class="language-name">English</h3>
+                        <p class="language-level">Professional Fluency</p>
+                    </div>
+                    <div class="language-card">
+                        <div class="language-flag">🇬🇷</div>
+                        <h3 class="language-name">Ελληνικά</h3>
+                        <p class="language-level">Native Fluency</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">Ready to Transform Your Wealth?</h2>
+                <p class="cta-text">
+                    Join the exclusive circle of clients who have discovered the alchemy of liquid gold trading. 
+                    Your journey to financial mastery begins with a single conversation.
+                </p>
+                <div class="cta-buttons">
+                    <a href="consultation.html" class="btn-primary">Schedule Free Consultation</a>
+                    <a href="services.html" class="btn-secondary">Explore Services</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="services.html">Gold Standard Signals</a>
+                    <a href="services.html">Diamond Mentorship</a>
+                    <a href="services.html">Portfolio Management</a>
+                    <a href="consultation.html">Free Consultation</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <a href="about.html">About</a>
+                    <a href="performance.html">Performance</a>
+                    <a href="testimonials.html">Testimonials</a>
+                    <a href="blog.html">Market Insights</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="disclaimers.html">Risk Disclaimers</a>
+                    <a href="compliance.html">Compliance</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <a href="mailto:info@spartatradingking.com">info@spartatradingking.com</a>
+                    <a href="tel:+4917712345678">+49 177 1234 5678</a>
+                    <a href="consultation.html">Schedule Consultation</a>
+                    <a href="client-portal.html">Client Portal</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255, 215, 0, 0.2);">
+                <p style="color: #e6d16a; margin-bottom: 1rem;">
+                    Forged in liquid gold • Refined through experience • Perfected through mastery
+                </p>
+                <div style="width: 300px; height: 3px; background: linear-gradient(90deg, transparent, #ffd700, #daa520, #ffd700, transparent); margin: 2rem auto;"></div>
+                <p style="color: #daa520; font-size: 0.9rem;">
+                    © 2025 Sparta Trading King. All rights reserved. Trading involves substantial risk.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links with offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const offset = navHeight + 20; // Add 20px extra spacing
+                    const targetPosition = target.offsetTop - offset;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(26, 19, 16, 0.98))';
+                nav.style.backdropFilter = 'blur(30px)';
+            } else {
+                nav.style.background = 'linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(26, 19, 16, 0.95))';
+                nav.style.backdropFilter = 'blur(25px)';
+            }
+        });
+
+        // Timeline animation on scroll
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe timeline items
+        document.querySelectorAll('.timeline-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(50px)';
+            item.style.transition = `opacity 0.6s ease ${index * 0.2}s, transform 0.6s ease ${index * 0.2}s`;
+            observer.observe(item);
+        });
+
+        // Observe skill categories
+        document.querySelectorAll('.skill-category').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+            observer.observe(item);
+        });
+
+        // Hero stats counter animation
+        const animateCounter = (element, target, duration = 2000) => {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target + (element.textContent.includes('%') ? '%' : '+');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start) + (element.textContent.includes('%') ? '%' : '+');
+                }
+            }, 16);
+        };
+
+        // Trigger counter animation when hero section is visible
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stats = entry.target.querySelectorAll('.hero-stat-number');
+                    stats.forEach(stat => {
+                        const text = stat.textContent;
+                        if (text.includes('20')) {
+                            animateCounter(stat, 20);
+                        } else if (text.includes('847')) {
+                            animateCounter(stat, 847);
+                        } else if (text.includes('94')) {
+                            animateCounter(stat, 94);
+                        }
+                    });
+                    heroObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        heroObserver.observe(document.querySelector('.hero-stats'));
+    </script>
+</body>
+</html>
